@@ -11,7 +11,7 @@ import (
 func SongRoutes() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 
-	router.HandleFunc("/api/song", controllers.AddSong).Methods(http.MethodPost)
-	router.HandleFunc("/api/song", controllers.GetAllSongs).Methods(http.MethodGet)
+	router.HandleFunc("/api/songs", controllers.AddSong).Methods(http.MethodPost)
+	router.HandleFunc("/api/songs", controllers.GetAllSongs).Methods(http.MethodGet)
 	return router
 }
