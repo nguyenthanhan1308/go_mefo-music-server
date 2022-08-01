@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
+	"go_mefo-music-server/server/routes"
 	"log"
 	"net/http"
-
-	"go_mefo-music-server/server/routes"
+	"os"
 )
 
 func main() {
-	port := ":3333"
+	port := os.Getenv("PORT")
 	r := routes.SongRoutes()
 
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -17,5 +17,5 @@ func main() {
 	}).Methods(http.MethodGet)
 
 	log.Println("Listening ...")
-	log.Fatal(http.ListenAndServe(port, r))
+	log.Fatal(http.ListenAndServe(":"+port, r))
 }

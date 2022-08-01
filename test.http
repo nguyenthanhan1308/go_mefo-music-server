@@ -1,8 +1,0 @@
-
-POST http://localhost:3333/api/song 
-content-type: application/json
-
-{
-    "title": "sample",
-    "src": "Wed, 21 Oct 2015 18:27:50 GMT"
-}

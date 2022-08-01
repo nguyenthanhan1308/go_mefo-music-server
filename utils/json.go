@@ -7,6 +7,10 @@ import (
 )
 
 func JSON(w http.ResponseWriter, statusCode int, data interface{}) {
+	//Allow CORS here By * or specific origin
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	w.WriteHeader(statusCode)
 	err := json.NewEncoder(w).Encode(data)
 
